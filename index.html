@@ -6,8 +6,6 @@
   <title>AquaDroid LLP - Coming Soon</title>
   <style>
     :root {
-      --bg-color: #071e2f;
-      --primary-color: #0d2c3f;
       --accent-color: #00c6ff;
       --font-color: #ffffff;
       --cta-color: #00b2ff;
@@ -21,21 +19,23 @@
       padding: 0;
     }
 
-    body {
-      background: radial-gradient(circle at 20% 40%, #0e2a40 0%, transparent 20%),
-                  radial-gradient(circle at 70% 30%, #0e2a40 0%, transparent 20%),
-                  radial-gradient(circle at 60% 75%, #0e2a40 0%, transparent 20%),
-                  linear-gradient(to right, var(--bg-color), var(--primary-color));
+    html, body {
+      height: 100%;
+      width: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: var(--font-color);
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #00111d, #000000);
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
@@ -51,26 +51,21 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
-      animation: fadeInDown 1.2s ease-in-out;
+      margin-top: -0.5rem;
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       color: rgba(255, 255, 255, 0.8);
-      animation: fadeInUp 1.5s ease-in-out;
     }
 
-    .subscribe-box {
+    .reach-us {
       display: flex;
-      border: 1px solid var(--accent-color);
-      border-radius: 30px;
-      overflow: hidden;
-      background-color: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(8px);
-      animation: fadeIn 2s ease-in-out;
+      margin-top: 2rem;
     }
 
     input[type="email"] {
@@ -80,6 +75,10 @@
       background: transparent;
       color: var(--font-color);
       width: 250px;
+    }
+
+    em {
+        margin-right: 5px;
     }
 
     button {
@@ -96,21 +95,6 @@
       background-color: var(--cta-hover);
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     footer {
       position: absolute;
       bottom: 20px;
@@ -122,9 +106,8 @@
 <body>
   <div class="logo"><span>AquaDroid</span> LLP</div>
   <h1>We're working on something amazing. Stay tuned!</h1>
-  <div class="subscribe-box">
-    <input type="email" placeholder="Enter your email" />
-    <button>Notify Me</button>
+  <div class="reach-us">
+       <em>Reach us at </em><a href="mailto:info@aquadroid.in" style="color: var(--accent-color); text-decoration: none;">info@aquadroid.in</a>
   </div>
   <footer>&copy; 2025 AquaDroid LLP. All rights reserved.</footer>
 </body>
